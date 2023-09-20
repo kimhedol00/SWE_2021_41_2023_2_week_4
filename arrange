@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for file in files/*; do
+
+    first=$(basename "$file")
+    first_letter="${first:0:1}"
+    first_lower="$(echo "$first_letter" | tr '[:upper:]' '[:lower:]')"
+    mv "$file" "$first_lower/"
+    
+done < files
